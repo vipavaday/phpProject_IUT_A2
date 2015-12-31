@@ -1,5 +1,5 @@
 <?php
-require_once('Character.php');
+require_once(dirname(__FILE__).'Character.php');
 
 class personnageView{
 public static function getHTMLDevelopped($personnage){
