@@ -1,12 +1,15 @@
 <?php
 
-require_once (dirname(__FILE__)."/classes/CharacterFactory.php");
-require_once ('retrieveInputs.php');
-require_once 'characterValidation.php';
+require_once $_SERVER['DOCUMENT_ROOT']."/controller/CharacterFactory.php";
+require $_SERVER['DOCUMENT_ROOT']."/controller/retrieveCharacterInputs.php";
+require $_SERVER['DOCUMENT_ROOT']."/controller/characterValidation.php";
 
 $character = CharacterFactory::getCharacter($dataErrors,$nom,$prenom,$titre,$pays,$description,$armoiries,$portrait);
+
 if(empty($dataErrors)){
-    require (dirname(__FILE__)."/CharacterNormalView.php");
+    require $_SERVER['DOCUMENT_ROOT']."/view/characterNormalView.php";
 }else{
-    require (dirname(__FILE__)."/CharacterErrorView.php");
+    require $_SERVER['DOCUMENT_ROOT'].'/view/characterErrorView.php';
 }
+
+?>

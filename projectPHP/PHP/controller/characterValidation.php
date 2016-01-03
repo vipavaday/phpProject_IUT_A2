@@ -8,3 +8,4 @@ $description = filter_var($description,FILTER_SANITIZE_STRING);
 $armoiries = filter_var($armoiries,FILTER_SANITIZE_STRING);
 $portrait = filter_var($portrait,FILTER_SANITIZE_STRING);
 
+?>

@@ -3,7 +3,7 @@
 class FormManager {
     
     public static function beginForm($method,$action,$css_class="",$extraOptions=""){
-        if( empty($css_class)){
+        if(!empty($css_class)){
             $css_class_option="class=\"".$css_class."\" ";
         }
         return "<form method=\"".$method."\" action=\"".$action."\" ".$css_class_option.$extraOptions.">\n";
@@ -21,7 +21,7 @@ class FormManager {
         }
         
         if($labelText != null && $labelText!=""){
-            $returnText .= "<label for=\"".$id."\">".$labelText."</label>\n";
+            $returnText .= "<label for=\"".$id."\">".$labelText."</label><br/>\n";
         }
         $returnText .= "<input type=\"".$type."\" name=\"".$name."\" id=\"".$id."\" ".$valueOption." ".$extraOption." />\n";
         
@@ -34,6 +34,14 @@ class FormManager {
     
     public static function addTextInput($labelText,$name,$id,$size,$value=null,$extraOptions=""){
         return self::addInput($labelText,"text", $name, $id,$value,"size =\"".$size."\" ".$extraOptions);
+    }
+    
+    public static function addEmailInput($labelText,$name,$id,$size,$value=null,$extraOptions=""){
+        return self::addInput($labelText,"email", $name, $id,$value,"size =\"".$size."\" ".$extraOptions);
+    }
+    
+    public static function addDateInput($labelText,$name,$id,$size,$value=null,$extraOptions=""){
+        return self::addInput($labelText,"date", $name, $id,$value,"size =\"".$size."\" ".$extraOptions);
     }
     
     public static function addPasswordInput ($labelText,$name,$id,$size,$value=null,$extraOptions=""){
@@ -57,7 +65,7 @@ class FormManager {
         if($labelText !=null && $labelText !=""){
             $returnText .= "<label for=\"".$id."\">".$labelText."</label>\n";
         }
-        $returnText .= "<textarea name=\"".$name."\" id=\"".$id."\" rows=\"".$rows."\" cols=\"".$cols."\" ".$extraOptions." >".$valueOption."</testarea>\n";
+        $returnText .= "<textarea name=\"".$name."\" id=\"".$id."\" rows=\"".$rows."\" cols=\"".$cols."\" ".$extraOptions." >".$valueOption."</textarea>\n";
         $returnText .= "</p>\n";
         return $returnText;
     }
@@ -110,4 +118,4 @@ class FormManager {
     
 }
 
-
+?>

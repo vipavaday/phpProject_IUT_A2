@@ -1,13 +1,13 @@
 <?php
 
-require_once (dirname(__FILE__)."/Model/Character.php");
+require_once $_SERVER['DOCUMENT_ROOT']."/model/Character.php";
 
 class CharacterFactory{
     
     
     public static function getCharacter(&$dataErrors,$nom,$prenom,$titre=null,$pays=null,$description=null,$armoirie=null,$portrait=null){
         
-        $character = Personnage::getDefaultCharacter();
+        $character = Character::getDefaultCharacter();
         $dataErrors=array();
         
         try{
@@ -45,7 +45,9 @@ class CharacterFactory{
         } catch (Exception $e) {
            $dataErrors ['portrait']=$e->getMessage() ."<br/>\n";
         }
+        
         return $character;
     } 
 }
 
+?>

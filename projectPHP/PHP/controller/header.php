@@ -1,31 +1,27 @@
-<!DOCTYPE html>
+<?php
+print_r($_SESSION);
+if(isset($_SESSION['pseudo']) && isset($_SESSION['mdp'])){
+    echo "<header>\n"
+    . "<nav>\n"
+    ."<a class=\"nav_focused\" >Accueil</a>"
+    ."<a href=\"/view/classes/characterReview.php\">Personnages</a>"
+    ."<a >Saisons</a>"
+    ."<a >Univers</a>"
+    ."<a >Forum</a>"
+    ."<a href=\"/view/signUpDefaultFormView.php\"><i>".$_SESSION['pseudo']." connecté</i></a>"
+    ."</nav>\n</header>";
+}else{
+    echo "<header>\n"
+    . "<nav>\n"
+    ."<a class=\"nav_focused\" >Accueil</a>"
+    ."<a href=\"/view/classes/characterReview.php\">Personnages</a>"
+    ."<a >Saisons</a>"
+    ."<a >Univers</a>"
+    ."<a >Forum</a>"
+    ."<a href=\"/persistance/deco.php\">Connexion</a>"
+    ."</nav>\n</header>";
+}
 
-<html lang="fr">
-	<head>
-		<title >	KaamelottFanSite.fr	</title>
-		<meta charset="utf-8"/>
-		<style> @import url(../CSS/style.css);</style>	
-	
-		
-		
-	</head>
-		
-		<body>
-			<header>
-				<nav>
-				<a href=""></a>
-				<a class="nav_focused" href="index.php"><span class="icon home"></span> Accueil</a>
-					<a href="../construction.php"><span class="icon formation"></span>Saison</a>
-					<a href="../construction.php"><span class="icon formation"></span>Univers</a>
-					<a href="../construction.php"><span class="icon formation"></span>Forum</a>
-					<a href="../construction.php"><span class="icon formation"></span>Internaute</a>
 
-				</nav>
-			
-			
-			</header>
 		
-		
-		
-		</body>
-</html>
+?>

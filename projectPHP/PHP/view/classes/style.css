@@ -1,0 +1,99 @@
+form{
+    display: inline-block;
+    color: black;
+    text-align: left;
+    margin: auto;
+    width: 250px;
+}
+
+input{
+    margin: auto;
+    margin-bottom: 10px;
+    width:200px;
+}
+
+label{
+    width: 180px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+body{
+    margin: auto;
+    height: 100%;
+    background-color:#3a3a3a;
+}
+
+.sansLabel{
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+}
+
+.errorMsg{
+    color:red;
+}
+
+/* Bandeau */
+
+header{  
+    color:whitesmoke;
+}
+
+header a{
+    color:whitesmoke;
+    padding:10px;
+    text-decoration: none;
+    font-size: 20px; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header a:hover{
+    background-color:#79b26c;
+}
+
+ header nav{
+    display:list-item;
+    list-style: none;
+    text-align: center;
+    height:auto;   
+    background-color: green;
+    border-bottom-color: #79b26c;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}
+
+div{
+    width:70%;
+    margin: auto;
+    padding: 20px;
+    min-height: 85%;
+    background-color:whitesmoke;
+    text-align: center;
+}
+
+html{
+    height: 100%;
+}
+
+table{
+    width:50%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th{
+    border: solid 1px black;
+    padding: 10px;
+}
+
+th{
+    width:50px; 
+}
+
+textarea{
+    resize:none;
+}

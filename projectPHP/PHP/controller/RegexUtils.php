@@ -1,6 +1,6 @@
 <?php
 
-class ExpressionsRegexUtils{
+class RegexUtils{
 
 	private static function getRegexFrLang(){
 		return '/^([a-zA-Z]'
@@ -24,29 +24,46 @@ class ExpressionsRegexUtils{
         }
         
         private static function getRegexDate(){
-            return '/^([0-9]*$/';
+            return '[^([0-9]{2}[/-]){2}[0-9]{4}]';
         }
-
-
         
-        
-	public static function isValidRegexFrLang($chaine, $minLenth, $maxLenth){
+        /**
+         * Retourne true si la chaine contient entre $minLenght et $maxLenght caractères alaphabétiques.
+         * @param type $chaine
+         * @param type $minLenght
+         * @param type $maxLenght
+         * @return type
+         */
+	public static function isValidRegexFrLang($chaine, $minLenght, $maxLenght){
 		return (isset($chaine) &&
-			     strlen($chaine) >= $minLenth && strlen($chaine) <= $maxLenth
+			     strlen($chaine) >= $minLenght && strlen($chaine) <= $maxLenght
 				&& preg_match(self::getRegexFrLang(), $chaine));				
 	}
 
-	public static function isValidRegexFrLangWithNumbers($chaine, $minLenth, $maxLenth){
+	public static function isValidRegexFrLangWithNumbers($chaine, $minLenght, $maxLenght){
 		return (isset($chaine) &&
-			     strlen($chaine) >= $minLenth && strlen($chaine) <= $maxLenth
+			     strlen($chaine) >= $minLenght && strlen($chaine) <= $maxLenght
 				&& preg_match(self::getRegexFrLangWithNumbers(), $chaine));				
 	}
-
-	public static function isValidString($chaine, $regExp, $minLenth, $maxLenth){
+        
+        public static function isValidRegexPseudo($chaine, $minLenght, $maxLenght){
 		return (isset($chaine) &&
-			     strlen($chaine) >= $minLenth && strlen($chaine) <= $maxLenth
+			     strlen($chaine) >= $minLenght && strlen($chaine) <= $maxLenght
+				&& preg_match(self::getRegexPseudo(), $chaine));				
+	}
+        
+        public static function isValidRegexDate($chaine, $minLenght, $maxLenght){
+		return (isset($chaine) &&
+			     strlen($chaine) >= $minLenght && strlen($chaine) <= $maxLenght
+				&& preg_match(self::getRegexDate(), $chaine));				
+	}
+
+	public static function isValidString($chaine, $regExp, $minLenght, $maxLenght){	
+            return (isset($chaine) &&
+			     strlen($chaine) >= $minLenght && strlen($chaine) <= $maxLenght
 				&& preg_match($regExp, $chaine));				
 	}
 }
 
 
+?>
